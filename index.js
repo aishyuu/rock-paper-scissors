@@ -1,56 +1,23 @@
-const bot = ["rock", "paper", "scissors"]
+// Choices
+const rockSelection = document.querySelector(".rock");
+const paperSelection = document.querySelector(".paper");
+const scissorsSelection = document.querySelector(".scissors");
 
-function getPlayerResp() {
-    let resp = prompt("Enter: 'rock', 'paper', 'scissors'")
-    return resp.toLowerCase()
-}
+// Entire Select Screen
+const selectScreen = document.querySelector(".select-screen");
 
-function getBotResp() {
-    const random = Math.floor(Math.random() * bot.length)
-    return bot[random]
-}
+// All bot choices
+// let randomNum = Math.floor(Math.random() * 3)
+const botChoices = ['rock', 'paper', 'scissors'];
 
-function playRound() {
-    let winner = ""
+rockSelection.addEventListener('click', () => {
+    console.log(botChoices[randomNum]);
+})
 
-    while(true){
-        let player = getPlayerResp()
-        let bot = getBotResp()
-        if(player === bot) {
-            console.log("Tie!")
-            continue
-        } else if ((player === "rock" && bot === "scissors") 
-        || (player === "paper" && bot === "rock") 
-        || (player === "scissors" && bot === "paper")) {
-            winner = "player"
-            break
-        } else {
-            winner = "bot"
-            break
-        }
-    }
-    console.log("Round winner is " + winner)
-    return winner
-}
+paperSelection.addEventListener('click', () => {
+    console.log("Paper picked");
+})
 
-function playSet() {
-    let player_count = 0
-    let bot_count = 0
-
-    while(player_count < 3 && bot_count < 3) {
-        let winner = playRound()
-        if(winner === "player") {
-            player_count++
-        } else {
-            bot_count++
-        }
-    }
-
-    if (player_count === 3) {
-        console.log("Player Wins!")
-    } else {
-        console.log("Bot Wins")
-    }
-}
-
-playSet()
+scissorsSelection.addEventListener('click', () => {
+    console.log("Scissors picked");
+})
