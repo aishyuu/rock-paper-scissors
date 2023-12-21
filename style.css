@@ -60,3 +60,18 @@ body {
     background-color: rgb(150, 150, 150);
     border-radius: 12px;
 }
+
+.winner-screen,
+.set-over {
+    text-align: center;
+}
+
+.next-round-btn,
+.reset-btn {
+    padding: 6px 16px;
+    border: 2px solid white;
+    border-radius: 12px;
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+}
